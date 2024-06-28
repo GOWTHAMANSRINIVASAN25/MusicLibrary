@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Song Details</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container for song details */
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: #bb86fc;
+            border-bottom: 1px solid #bb86fc;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* Table styles */
+        .song-details {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #e0e0e0;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #333;
+            text-align: left;
+        }
+
+        th {
+            color: #bb86fc;
+        }
+
+        /* Back link styles */
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #03dac6;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #01b0b9;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Song Details</h2>
+    <div class="song-details">
+        <table>
+            <tr>
+                <th>ID</th>
+                <td th:text="${song.id}">-</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td th:text="${song.title}">-</td>
+            </tr>
+            <tr>
+                <th>Artist</th>
+                <td th:text="${song.artist}">-</td>
+            </tr>
+            <tr>
+                <th>Album</th>
+                <td th:text="${song.album}">-</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td th:text="${song.genre}">-</td>
+            </tr>
+            <tr>
+                <th>Release Year</th>
+                <td th:text="${song.releaseYear}">-</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td th:text="${song.duration}">-</td>
+            </tr>
+        </table>
+    </div>
+    <a class="back-link" th:href="@{/songs}">Back to Song List</a>
+</div>
+</body>
+</html>
